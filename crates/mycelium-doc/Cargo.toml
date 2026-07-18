@@ -15,19 +15,19 @@ workspace = true
 # Content-addressing (ADR-003): reuse the kernel's BLAKE3 `ContentHash` shape so a doc node's
 # identity is the same `blake3:<hex>` form as every other content address. blake3 + serde +
 # serde_json are already vetted workspace deps (mycelium-core/-lsp/...); NO new dependency.
-mycelium-core = { git = "https://github.com/tzervas/mycelium-core", rev = "781d3fcceba82acfe6b0eb46650513bd78a2416b" }
+mycelium-core = { git = "https://github.com/tzervas/mycelium-core", rev = "46d2515cbd86d2ae4d1365f4adcd2796737e9f0b" }
 blake3.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 # The M-359 nodule-header metadata the apiref generator projects from (G2: a missing @summary is an
 # explicit "undocumented" node, never invented). Above the kernel (KC-3).
-mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "cfc934b32c0b7b57becbb7ddfe3c516712c6ec0e" }
+mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "20b8a6d264ac728e81cfe8cd90cec8d2a91370be" }
 # The trusted L1 parse + type-check used by the "checked-examples" §4.1 lint (every checked inline
 # example must actually type-check — T7.5/T7.1). The interpreter/checker is the trusted base.
-mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "cd32a1ed7ab7d2be38c9c3047da7318d182b7a1c" }
+mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "2b92f54349eb0d4f67e32e983874df76908b9ab6" }
 # The shared RFC-0041 recursion-budget + guarded-stack leaf (W1, §4.7): guards `Node::walk` against a
 # host-stack overflow on a pathologically deep doc-IR tree. A leaf dep, not a kernel dep (KC-3).
-mycelium-workstack = { git = "https://github.com/tzervas/mycelium-core", rev = "781d3fcceba82acfe6b0eb46650513bd78a2416b" }
+mycelium-workstack = { git = "https://github.com/tzervas/mycelium-core", rev = "46d2515cbd86d2ae4d1365f4adcd2796737e9f0b" }
 
 [[bin]]
 name = "myc-doc"
