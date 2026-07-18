@@ -1,34 +1,33 @@
-[package]
-name = "mycelium-doc"
-version.workspace = true
-description = "myc-doc — the M-363 documentation BUILD pipeline: a content-addressed doc-IR (a PROJECTION of the corpus + code + M-359 metadata, never a parallel truth — ADR-003/G11) with many renderers (HTML · Typst→PDF · machine JSON) and the §4.1 doc quality-bar lint (M-363 §6, 8 checks) run over that IR. Undocumented is FLAGGED, never invented (the prose analogue of G2). KC-3 — above the kernel; no kernel change; no new workspace dependency."
-edition.workspace = true
-rust-version.workspace = true
-license.workspace = true
-repository.workspace = true
-publish = false
+# mycelium-doc — standalone workspace (extracted from tzervas/mycelium; see CROSS-REF.md).
+# Container layout: the crate lives at crates/mycelium-doc so its CARGO_MANIFEST_DIR/../../lib
+# fixture paths (self-hosted compiler + std .myc differentials) resolve to this repo's lib/,
+# byte-identical to the monorepo layout — zero source divergence.
+[workspace]
+resolver = "2"
+members = [
+    "crates/mycelium-doc",
+]
 
-[lints]
-workspace = true
+[workspace.package]
+version = "0.464.0"
+edition = "2021"
+rust-version = "1.96.1"
+license = "MIT"
+repository = "https://github.com/tzervas/mycelium-doc"
 
-[dependencies]
-# Content-addressing (ADR-003): reuse the kernel's BLAKE3 `ContentHash` shape so a doc node's
-# identity is the same `blake3:<hex>` form as every other content address. blake3 + serde +
-# serde_json are already vetted workspace deps (mycelium-core/-lsp/...); NO new dependency.
-mycelium-core = { path = "../mycelium-core" }
-blake3.workspace = true
-serde.workspace = true
-serde_json.workspace = true
-# The M-359 nodule-header metadata the apiref generator projects from (G2: a missing @summary is an
-# explicit "undocumented" node, never invented). Above the kernel (KC-3).
-mycelium-proj = { path = "../mycelium-proj" }
-# The trusted L1 parse + type-check used by the "checked-examples" §4.1 lint (every checked inline
-# example must actually type-check — T7.5/T7.1). The interpreter/checker is the trusted base.
-mycelium-l1 = { path = "../mycelium-l1" }
-# The shared RFC-0041 recursion-budget + guarded-stack leaf (W1, §4.7): guards `Node::walk` against a
-# host-stack overflow on a pathologically deep doc-IR tree. A leaf dep, not a kernel dep (KC-3).
-mycelium-workstack = { path = "../mycelium-workstack" }
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+blake3 = "1"
 
-[[bin]]
-name = "myc-doc"
-path = "src/bin/myc-doc.rs"
+[workspace.lints.rust]
+# ADR-014: unsafe permitted-but-documented; the check is clippy::undocumented_unsafe_blocks.
+unsafe_code = "allow"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+undocumented_unsafe_blocks = "warn"
+
+# G2 never-silent arithmetic: release builds panic on overflow (monorepo parity).
+[profile.release]
+overflow-checks = true

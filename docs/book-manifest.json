@@ -1,0 +1,84 @@
+{
+  "title": "The Mycelium Book",
+  "preface": "This book is a curated reading order over the same honest, content-addressed corpus projection the myc-doc site and JSON views render — nothing here is authored separately from that corpus (ADR-003/G11: one truth, many renderers). Start at Getting Started and read forward, or jump to any chapter; the Standard Library, RFC, ADR, and design-note chapters are generated from the current file set, so a newly-added module or decision appears here automatically the next time the book is built.",
+  "chapters": [
+    {
+      "title": "Getting Started",
+      "sources": [
+        "docs/wiki/Home.md",
+        "docs/wiki/Getting-Started.md",
+        "docs/reference/tutorial.md",
+        "docs/examples/README-binary64-https-downloader.md",
+        "docs/examples/README-https-downloader-layered.md"
+      ]
+    },
+    {
+      "title": "Language Guide",
+      "sources": [
+        "docs/guide/why-and-design.md",
+        "docs/guide/repository-structure.md",
+        "docs/guide/workspace-map.md",
+        "docs/guide/guarantees-and-verification.md",
+        "docs/guide/comparisons.md",
+        "docs/guide/status-and-roadmap.md"
+      ]
+    },
+    {
+      "title": "Language Reference",
+      "sources": [
+        "docs/reference/language-reference.md",
+        "docs/spec/grammar/mycelium.ebnf",
+        "docs/reference/stdlib-api.md"
+      ]
+    },
+    {
+      "title": "Standard Library",
+      "globs": ["docs/spec/stdlib/*.md"],
+      "exclude": ["docs/spec/stdlib/README.md", "docs/spec/stdlib/_TEMPLATE.md"]
+    },
+    {
+      "title": "Concepts",
+      "sources": [
+        "docs/wiki/Architecture.md",
+        "docs/wiki/Memory-Model.md",
+        "docs/wiki/Tunable-Certification.md"
+      ]
+    },
+    {
+      "title": "Toolchain",
+      "sources": [
+        "docs/wiki/Crate-Index.md",
+        "docs/wiki/API-Reference.md",
+        "docs/spec/grammar/README.md"
+      ]
+    },
+    {
+      "title": "Contributing",
+      "sources": [
+        "CONTRIBUTING.md",
+        "docs/guide/decisions-and-reading-order.md",
+        "docs/guide/contributing-and-provenance.md"
+      ]
+    },
+    {
+      "title": "Appendices — Glossary & Foundation",
+      "sources": [
+        "docs/Glossary.md",
+        "docs/Mycelium_Project_Foundation.md",
+        "docs/Doc-Index.md"
+      ]
+    },
+    {
+      "title": "Appendices — RFCs",
+      "globs": ["docs/rfcs/RFC-*.md"]
+    },
+    {
+      "title": "Appendices — Architecture Decisions",
+      "globs": ["docs/adr/ADR-*.md"]
+    },
+    {
+      "title": "Appendices — Design Notes",
+      "globs": ["docs/notes/DN-*.md"]
+    }
+  ]
+}
