@@ -15,7 +15,7 @@ workspace = true
 # Content-addressing (ADR-003): reuse the kernel's BLAKE3 `ContentHash` shape so a doc node's
 # identity is the same `blake3:<hex>` form as every other content address. blake3 + serde +
 # serde_json are already vetted workspace deps (mycelium-core/-lsp/...); NO new dependency.
-mycelium-core = { git = "https://github.com/tzervas/mycelium-core", rev = "46d2515cbd86d2ae4d1365f4adcd2796737e9f0b" }
+mycelium-core = { git = "https://github.com/tzervas/mycelium-core", rev = "3958d2ea3c3921611e33f1f00e3469b29a939a76" }
 blake3.workspace = true
 serde.workspace = true
 serde_json.workspace = true
@@ -27,7 +27,7 @@ mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "3209a
 mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "31f7aaa956cca0e1c7a894eeaff4d10d58b5b2b8" }
 # The shared RFC-0041 recursion-budget + guarded-stack leaf (W1, §4.7): guards `Node::walk` against a
 # host-stack overflow on a pathologically deep doc-IR tree. A leaf dep, not a kernel dep (KC-3).
-mycelium-workstack = { git = "https://github.com/tzervas/mycelium-core", rev = "46d2515cbd86d2ae4d1365f4adcd2796737e9f0b" }
+mycelium-workstack = { git = "https://github.com/tzervas/mycelium-core", rev = "3958d2ea3c3921611e33f1f00e3469b29a939a76" }
 
 [[bin]]
 name = "myc-doc"
