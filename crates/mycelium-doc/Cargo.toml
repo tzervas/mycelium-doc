@@ -24,7 +24,7 @@ serde_json.workspace = true
 mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "20b8a6d264ac728e81cfe8cd90cec8d2a91370be" }
 # The trusted L1 parse + type-check used by the "checked-examples" §4.1 lint (every checked inline
 # example must actually type-check — T7.5/T7.1). The interpreter/checker is the trusted base.
-mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "2b92f54349eb0d4f67e32e983874df76908b9ab6" }
+mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "31f7aaa956cca0e1c7a894eeaff4d10d58b5b2b8" }
 # The shared RFC-0041 recursion-budget + guarded-stack leaf (W1, §4.7): guards `Node::walk` against a
 # host-stack overflow on a pathologically deep doc-IR tree. A leaf dep, not a kernel dep (KC-3).
 mycelium-workstack = { git = "https://github.com/tzervas/mycelium-core", rev = "46d2515cbd86d2ae4d1365f4adcd2796737e9f0b" }
