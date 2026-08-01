@@ -21,10 +21,10 @@ serde.workspace = true
 serde_json.workspace = true
 # The M-359 nodule-header metadata the apiref generator projects from (G2: a missing @summary is an
 # explicit "undocumented" node, never invented). Above the kernel (KC-3).
-mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "985538d697430a361352f2805b2f2a9aadd1a3e5" }
+mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "610624021a0ea43d3919d4200d7522e31a6dcce0" }
 # The trusted L1 parse + type-check used by the "checked-examples" §4.1 lint (every checked inline
 # example must actually type-check — T7.5/T7.1). The interpreter/checker is the trusted base.
-mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "1d422648d6f41e1077c8f8b7ae7c7e38b2bd254f" }
+mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "4e4a29679d8e941eab86fad40f49c9947e68eefd" }
 # The shared RFC-0041 recursion-budget + guarded-stack leaf (W1, §4.7): guards `Node::walk` against a
 # host-stack overflow on a pathologically deep doc-IR tree. A leaf dep, not a kernel dep (KC-3).
 mycelium-workstack = { git = "https://github.com/tzervas/mycelium-core", rev = "57ef45b453eef1f02bdfb1f0cad1034dabd32b1f" }
