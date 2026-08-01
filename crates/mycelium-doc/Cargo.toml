@@ -21,7 +21,7 @@ serde.workspace = true
 serde_json.workspace = true
 # The M-359 nodule-header metadata the apiref generator projects from (G2: a missing @summary is an
 # explicit "undocumented" node, never invented). Above the kernel (KC-3).
-mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "20b8a6d264ac728e81cfe8cd90cec8d2a91370be" }
+mycelium-proj = { git = "https://github.com/tzervas/mycelium-proj", rev = "3209a570c472cd8a94c52f8562cbbfd07c12f322" }
 # The trusted L1 parse + type-check used by the "checked-examples" §4.1 lint (every checked inline
 # example must actually type-check — T7.5/T7.1). The interpreter/checker is the trusted base.
 mycelium-l1 = { git = "https://github.com/tzervas/mycelium-l1", rev = "31f7aaa956cca0e1c7a894eeaff4d10d58b5b2b8" }
